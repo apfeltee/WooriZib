@@ -1,0 +1,152 @@
+.wide-wrap{
+	background-color:#FFF;
+}
+
+.wide-wrap-box{
+	max-width:1200px;
+	margin:auto;
+}
+
+.spot {
+	position: relative;
+	font-size:13px;
+	padding: 10px 0px 10px 10px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.spot div {
+	display:inline-block;
+	min-width:50px;
+	padding-right:10px;
+}
+
+.spot .span2{
+	width:130px;
+}
+
+.search_area {
+  width: 100%;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+  max-width: 641px;
+  height: 45px;
+  text-align: left;
+}
+
+.search_area select {
+  border: 0px;
+  width: 100%;
+  background-color: transparent;
+  padding-left: 10px;
+  font-weight: bold;
+  color: #7c7c7c;
+  appearance: none;
+}
+
+.search_area #search {
+  background: #fff url("/assets/common/img/search.png") no-repeat 97% 50%;
+  width: 100%;
+  border: none !important;
+  background-color: transparent;
+  padding-left: 10px;
+  font-weight: bold;
+  color: #7c7c7c;
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075);
+}
+
+.search_area button {
+  width: 100%;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 0px;
+  height: 45px;
+  color: white;
+  font-weight: bold;
+}
+
+.spot_link {
+	margin-top:10px;
+}
+.spot_link a {
+	font-weight:bold;
+	color: #fff;
+}
+
+.spot_link a:hover {
+	color: #ccc;
+}
+
+.spot_link a:after {
+	color:#cacaca;
+	content: ' / ';
+}
+
+.spot_link a:last-child:after {
+	content: '';
+}
+
+.select-style {
+	width:120px;
+	border-radius:10px;
+    background: #ffffff url("/assets/common/img/select.png") no-repeat 80% 50%;
+}
+
+.select-style-ie8 {
+	width:120px;
+	border-radius:10px;
+}
+
+.select-style select,.select-style-ie8 select{
+   color:#7c7c7c;
+   appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+}
+
+.select-style select::-ms-expand {
+    display: none;
+}
+
+.pattern-bg {
+	display:none;
+	z-index:1;
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+/*** 메인페이지 칼라픽커 선택창***/
+.colorpicker input{
+	height:auto;
+}
+
+.user_select_li {
+	background: url(/assets/plugin/colorpicker/images/select2.png) center;
+	background-color:#000;
+}
+
+.user_select_text{
+	color:#cfcfcf;
+	position:absolute;
+	padding-top:10px;
+}
+
+.colorSelector_wrap{
+	margin-bottom:10px;
+	position:relative;
+}
+
+#colorSelector {
+	top:0px;
+	right:0px;
+	position:absolute;
+	display:none;
+}
+/*** 메인페이지 칼라픽커 선택창***/

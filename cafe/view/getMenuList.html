@@ -1,0 +1,9 @@
+<label># 카페 게시판</label>
+<select class="form-control" id="menu_id" name="menu_id" onchange="cafe_history(this.value);">
+<option value="">게시판 선택</option>
+<?php
+	foreach($result->result->menus->menu as $value){
+		echo '<option value="'.$value->menuid.'">'.$value->menuname.'</option>';
+	}
+?>
+</select>

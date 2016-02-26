@@ -1,0 +1,67 @@
+.search-item-wide .installation_plan{
+  background: url(/assets/common/img/installation/tag_category_plan.png) top right no-repeat;  
+}
+
+.search-item-wide .installation_end{
+  background: url(/assets/common/img/installation/tag_category_end.png) top right no-repeat;  
+}
+
+.search-item-wide .installation_go{
+  background: url(/assets/common/img/installation/tag_category_go.png) top right no-repeat;  
+}
+
+.search-item-wide {
+  height:255px;
+}
+
+
+.search-item-wide .price_info{  
+  height:25px;
+  font-size: 13px;
+}
+
+.installation_pyeong .nav-tabs li a {
+    padding-top: 50px;
+    font-size: 13px !important;
+    padding: 5px 10px 5px !important;
+}
+
+/* 분양 홈에서 탑 우측에 최신 분양 3건 보이도록 한 부분의 스타일 */
+.installation_cell {
+	width:100%;
+	height:137px;
+    background-size: cover;
+    background-position: 50% 50%;
+	position:relative;
+}
+
+
+.installation_cell .meta a{
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 16px;
+    margin: 5px 0 3px 0;
+    letter-spacing: -1px;
+    line-height: 1.4;
+}
+
+.installation_cell .meta {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.75) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.75)));
+    background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.75) 100%);
+    background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.75) 100%);
+    background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.75) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.75) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+    padding: 35px 10px 10px 10px;
+}
+
+.installation_cell .address {
+    color: #bbb;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}

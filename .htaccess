@@ -1,0 +1,13 @@
+PHP_FLAG register_globals ON
+PHP_VALUE upload_max_filesize 50M
+PHP_VALUE post_max_size 50M
+PHP_VALUE memory_limit 2G
+PHP_flag allow_url_fopen 1
+<IfModule mod_rewrite.c>
+ RewriteEngine On
+ RewriteBase /
+ RewriteCond $1 !^(index\.php|images|assets|uploads|cafe|ckeditor|dbmanager|ionic|favicon.ico|sms)
+ RewriteCond %[REQUEST_FILENAME] !-f
+ RewriteCond %[REQUEST_FILENAME] !-d
+ RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>

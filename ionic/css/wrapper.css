@@ -1,0 +1,29 @@
+html,
+body {
+    background: #111 url('../img/bg.png');
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+iframe {
+    border: none;
+    margin: 30px auto;
+}
+
+.warning {
+    display: none;
+}
+
+.warning.on {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ff0;
+    padding: 1rem;
+}
+

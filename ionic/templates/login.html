@@ -1,0 +1,33 @@
+<div class="modal">
+  <ion-header-bar class="bar bar-header bar-stable">
+    <h1 class="title">회원로그인</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()"><i class="icon ion-ios-close"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div align="center" class="status-message">
+        <span ng-bind="msg"></span>
+    </div>
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">이메일</span>
+          <input type="text" ng-model="loginData.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">비밀번호</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">로그인</button>
+        </label>
+      </div>
+    </form>
+
+    <div class="padding" style="text-align:center;">
+      <a href="{{company.host}}/member/signup" target="_blank"><i class="icon ion-person-add"></i> 회원가입</a>
+    </div>
+  </ion-content>
+</div>
+

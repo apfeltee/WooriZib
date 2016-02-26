@@ -1,0 +1,86 @@
+.main_color {
+	position:relative;
+	overflow:hidden;
+	background-color: #ffffff;
+	color: #666666;
+}
+
+.alternative_color{
+	position:relative;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-color: #f8f8f8;
+	background-position: top left;
+	background: url("/assets/basic/img/bw.jpg") repeat;
+	background-color: #F6F6F6;
+	background-size: cover;
+	border-color: #e5e4e4;
+	border-bottom-width: 1px;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-top-style: solid;	
+	-ms-behavior: url(/assets/plugin/backgroundsize.min.htc);
+}
+
+.alternative_color_no {
+	padding-bottom:0px;	
+}
+
+.walk_color{
+	position:relative;
+	padding-top:80px;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-color: #f8f8f8;
+	background-position: top left;
+	background: url("/assets/basic/img/room.jpg") repeat;
+	background-color: #F6F6F6;
+	background-size: cover;
+	border-color: #e5e4e4;
+	border-bottom-width: 1px;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-top-style: solid;	
+	-ms-behavior: url(/assets/plugin/backgroundsize.min.htc);
+}
+
+.walk_color h1{
+	font-size:25px;
+}
+
+.walk_color p {
+	text-align:center;
+	font-size:14px;	
+}
+
+.walk_color span {
+	font-weight:bold;
+	font-size:22px;		
+}
+
+.local {
+	height:200px;
+	border-radius:5px;
+	background-size: cover !important;
+	-ms-behavior: url(/assets/plugin/backgroundsize.min.htc);
+}
+
+.local .cover-wrapper{
+	font-family:"Malgun Gothic";
+	position: absolute!important;
+	width: 90%;
+	text-align: center;
+	left: 5%;
+	top: 50%;
+	-wekit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+
+	text-decoration: none;
+	font-weight:bold;
+	font-size: 28px;
+	color: #fff;
+	text-shadow: rgba(0,0,0,.8) 0 1px 0;
+}

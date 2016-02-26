@@ -1,0 +1,102 @@
+/** 2015년 10월 19일 : 원래 붙어 있었던 것이 떨어져 버려서 일단 여기서 수정을 해 놨다. **/
+.searchbox_wrapper .searchbox{
+	border-radius:0;
+	margin-top:0px;
+}
+
+.searchbox_header {
+	max-width: 685px;
+	margin:0px auto;
+	background-color: rgba(27,80,152,0.9);
+	padding:10px 10px 20px 10px;
+	text-align:left;
+	padding-left:10px;
+}
+
+.searchbox_header h1{
+	font-weight:900;
+	font-size:18px;
+	margin-bottom:0px;
+}
+
+.searchbox_header h1 small{
+	font-size:12px;	
+	color:white;	
+}
+
+.searchbox {
+	border-radius: 0px;
+	margin-top:0px;
+	border-radius:0px;
+}
+
+.btn-search{
+	background-color:#2DB400;
+}
+
+.pre-footer {
+	margin-top:50px;
+	border-top:1px dotted #cacaca;
+}
+
+.footer-menu {
+	padding:50px 0px 50px 0px;
+	background-color:white;
+}
+
+.footer-menu h4 {
+	margin-bottom:20px;
+}
+
+.footer-menu li {
+	border-bottom:1px solid #efefef;	
+}
+
+.footer {
+	background-color:white;
+	text-align:center;
+	padding:30px 0px 30px 0px;
+	color:#565656;
+}
+
+.theme .cell {
+	border-radius:10px;
+	height:360px;
+}
+
+.service-box {
+	border-color: #eae9e9;
+	border-bottom-width: 0px;
+	border-top-width: 0px;
+	border-bottom-style: solid;
+	border-top-style: solid;
+	padding-bottom: 100px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 95px;
+	background-attachment: fixed;
+	background-color: #ffffff;
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url(/assets/theme001/img/back_2.jpg	);
+}
+
+.service-box h1 {color:white;}
+
+.service-box .service-cell {
+	padding: 20px;
+	min-height: 307px;
+	height: auto;
+	background-color: rgba(255, 255, 255, 0.901961);	
+}
+
+.service-box h4 {
+	font-size: 18px;
+}
+
+.service-box img {
+	margin-top:20px;
+	margin-bottom:20px;
+	border: 5px solid rgba(000,000,000,.04);
+}

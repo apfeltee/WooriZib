@@ -1,0 +1,136 @@
+<div class="modal" ng-controller="PropertyCtrl">
+  <ion-header-bar class="bar bar-header bar-stable">
+    <div class="buttons">
+      <button class="button button-clear" ng-show="hope" ng-click="hope_remove(id)" style="padding-top:7px;"><i class="icon ion-heart"></i></button>
+      <button class="button button-clear" ng-hide="hope" ng-click="hope_add(id)" style="padding-top:7px;"><i class="icon ion-ios-heart-outline"></i></button>
+    </div>
+    <h1 class="title">{{post.title}}</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePropertyModal()"><i class="icon ion-ios-close"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+
+        <ion-slide-box ng-show="slides.length" on-slide-changed="slideHasChanged($index)" auto-play="true"> 
+            <ion-slide ng-repeat="slide in slides" style="height:300px;">
+                <div style="background:url({{slide.filename}});background-size:cover;height:300px;">&nbsp;</div>
+            </ion-slide>
+        </ion-slide-box>
+
+       
+        <div class="padding">
+            <h4 class="title"><span class="label label-default">{{post.id}}</span>{{post.title}}</h4>
+            <p>{{post.description}}</p>
+            <table class="border-table">
+                <tr>
+                    <th width="20%">가격</th>
+                    <td width="80%" colspan="3"><p ng-bind-html="renderHtml(helpers.price(post))" style="margin:0px;"></p></td>
+                </tr>
+                <tr>
+                    <th width="20%">주소</th>
+                    <td width="80%" colspan="3">{{post.address_name}}</td>
+                </tr>
+                <tr ng-show="{{post.part=='N'}}">
+                    <th width="20%">범위</th>
+                    <td width="80%" colspan="3">건물전체</td>
+                </tr>
+                <tr ng-show="{{post.part=='N'}}">
+                    <th width="20%">층수</th>
+                    <td width="80%" colspan="3">지상 {{post.current_floor}} 층 / 지하 {{post.total_floor}} 층</td>
+                </tr>
+                <tr ng-show="{{post.part=='Y'}}">
+                    <th width="20%">층수</th>
+                    <td width="80%" colspan="3">현재 {{post.current_floor}} 층/ 전체 {{post.total_floor}} 층</td>
+                </tr>
+                <tr ng-show="{{post.part=='N'}}">
+                    <th width="20%">면적</th>
+                    <td width="80%" colspan="3">
+                        건축면적 {{post.real_area}} ㎡ </br>
+                        대지면적 {{post.law_area}} ㎡ </br>
+                        연면적 {{post.tf_area}} ㎡</br>
+                    </td>
+                </tr>
+                <tr ng-show="{{post.part=='Y'}}">
+                    <th width="20%">면적</th>
+                    <td width="80%" colspan="3">
+                        전용 {{post.real_area}} ㎡/ 공급 {{post.law_area}} ㎡
+                    </td>
+                </tr>
+                <tr ng-show="{{post.part=='Y'}}">
+                    <th width="320">방수</th>
+                    <td width="80%" colspan="3">
+                        방 {{post.room_cnt}} 개/ 욕실 {{post.rest_cnt}} 개
+                    </td>
+                </tr>
+                <tr>
+                    <th width="20%">관리비</th>
+                    <td width="30%">
+                        <span ng-show="{{post.mgr_price}}">{{post.mgr_price}} 만원</span>
+                        <span ng-show="{{!post.mgr_price}}">문의</span>
+                    </td>
+                    <th width="20%">주차비</th>
+                    <td width="30%">
+                        <span ng-show="{{post.park_price}}">{{post.park_price}} 만원</span>
+                        <span ng-show="{{!post.park_price}}">문의</span>                
+                    </td>
+                </tr>
+                <tr>
+                    <th width="20%">입주일</th>
+                    <td width="30%">{{post.enter_year}}</td>
+                    <th width="20%">준공일</th>
+                    <td width="30%">{{post.build_year}}</td>
+                </tr>
+                <!-- 옵션 시작 -->
+                <tr>
+                    <th width="20%">옵션</th>
+                    <td width="80%" colspan="3">{{post.option}}</td>
+                </tr>
+                <!-- 옵션 종료 -->
+                <tr>
+                    <th width="20%">요약</th>
+                    <td width="80%" colspan="3">
+                        {{post.abstract}}
+                    </td>
+                </tr>        
+                <tr>
+                    <th width="20%">지하철</th>
+                    <td width="80%" colspan="3">
+                        <span ng-repeat="subway in subways">
+                            <div class="subway sub_{{subway.hosun_id}}" title="{{subway.hosun}} 호선">{{subway.name}}</div> {{subway.distance | singleDecimal}} ㎞
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-repeat="(key,val) in metas">
+                    <th width="20%">{{val}}</th>
+                    <td colspan="3">{{mySplit(post.etc,key)}}</td>
+                </tr>
+            </table>
+
+            <p ng-bind-html="renderHtml(post.content)"></p>
+            <p class="tags"><i class="icon ion-pricetag"></i></ons-icon>
+            <span>{{post.tag}}</span>
+            </p>
+        </div>
+
+    </ion-content>
+
+    <ion-footer-bar align-title="left" class="bar-outline">
+       
+            
+            <div class="buttons">
+                <img ng-src="{{member_profile=''&&company.host+'/uploads/member/'+profile||'img/no_human.png'}}" style="height:30px;width:30px;border-radius:50%;margin:5px">
+            </div>
+            
+            <h1 class="title" style="text-align:left;padding-left:40px;line-height:40px;font-size:15px;">{{post.member_name}} ({{post.member_phone}})</h1>
+            
+            <div class="buttons">
+                <a href="tel:{{post.member_phone}}" style="color:white;line-height:20px;padding-top:10px;" class="button button-positive button-fab button-fab-bottom-right">
+                  <i class="icon ion-ios-telephone"></i>
+                </a>
+            </div>
+          
+       
+    </ion-footer-bar>
+
+</div>
+

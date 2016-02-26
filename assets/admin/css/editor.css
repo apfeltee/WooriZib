@@ -1,0 +1,41 @@
+body {
+	font-family:'Nanum Gothic','나눔고딕','NanumGothicWeb','맑은 고딕','돋움',dotum,AppleGothic;
+	font-size:12px;
+}
+/** 테이블 **/
+
+.border-table {
+	margin-top:10px;
+	margin-bottom:10px;
+	border: 1px solid #dddddd;
+	width:100%;
+	border-spacing: 0;
+}
+
+.border-table th {background-color: #f4f4f4;padding:5px;color: #222;border-collapse:collapse;border: 1px solid #dddddd;}
+.border-table tbody tr.selected td, .border-table tbody tr.selectable:hover td {
+	background: #dbdbdb;
+}
+.border-table tbody td {
+	border: 1px solid #dddddd;
+	vertical-align: middle;
+	padding:5px;
+	border-top: 1px solid #dddddd;
+}
+
+li{
+	list-style-image: url(/assets/common/img/uncheck.gif);
+	border-bottom: 1px solid #ccc;
+	padding: .2em 0 .2em .5em;
+	font-weight: bold;
+	color: #666;
+}
+
+li:hover {
+   cursor: pointer;
+   list-style-image: url(/assets/common/img/check.gif);
+   background-color: #f2f2f2;
+   color: #000; 
+}
+
+img {max-width:100%;}

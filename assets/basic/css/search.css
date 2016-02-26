@@ -1,0 +1,92 @@
+.nav-search {
+  margin-bottom:0px;
+}
+
+.searchbox ul:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nav-search > li {
+  position:relative;
+  display: table-cell;
+  vertical-align: bottom;
+  padding:5px 20px 10px 20px;
+  /*font-size:17px;*/
+  /*DD*/
+  font-size: 12px;
+  float:left;
+}
+
+.nav-search > li.active > a:after {
+  content: '';
+  border-radius: 0!important;
+  bottom: 0;
+  background: none!important;
+  border-color: transparent transparent #fff transparent;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  display: inline-block;
+  left: 50%;
+  margin-bottom: -1px;
+  margin-left: -5px;
+  top: auto;
+  position: absolute;
+}
+
+.search-inner {
+  border-radius:5px;
+  padding: 4px 11px 4px 4px;
+  background-color:white;
+  text-align:left;
+  /*DD*/
+  /*margin-bottom:10px;*/
+  /*padding:5px;*/
+  margin-bottom: 6px;
+}
+
+/** form 안에 row에 마진이 있으면 메인페이지 검색 창에서 이상하게 보인다. **/
+.search-inner .row {
+  margin-bottom:0px;  
+}
+
+.search-inner .col-md-3, .search-inner .col-md-2, .search-inner .col-md-4 {
+  padding-right:0px;
+}
+
+.search-inner .col-xs-5ths {
+  padding-right: 4px;
+}
+
+.searchbox select,.searchbox-ie8 select{
+	color:#454545;
+  font-weight:900;
+}
+
+.searchbox li label,.searchbox-ie8 li label {
+  margin-right: 5px;
+  margin-top:5px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 16px;
+  vertical-align: middle;
+  zoom: 1;
+}
+
+.searchbox_wrapper_bottom .searchbox select.form-control, .searchbox_wrapper_bottom .searchbox-ie8 select.form-control{
+  height: 27px;
+  font-size: 12px;
+}
+
+.searchbox_wrapper_bottom .searchbox button.btn-search {
+  height: 27px;
+  font-size: 12px;
+  padding: 0;
+}
+
+.searchbox_wrapper_bottom .searchbox input.form-control {
+  height: 27px;
+  font-size: 12px;
+}

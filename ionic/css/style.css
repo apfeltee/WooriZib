@@ -1,0 +1,320 @@
+/* Empty. Add your own CSS if you like */
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-Italic.ttf");
+  font-style:italic;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../font/SourceSansPro-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-LightItalic.ttf");
+  font-weight: 300;
+  font-style:italic;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-Bold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../font/SourceSansPro-BoldItalic.ttf");
+  font-weight: 600;
+  font-style:italic;
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .button, input, textarea { font-family: 'Source Sans Pro', sans-serif; }
+
+a { text-decoration: none; }
+
+h4.title {
+  font-size:15px;
+  font-weight:bold;
+  line-height:20px;
+}
+
+img { max-width: 100%; height:auto; }
+
+.menu-open .logo {
+  opacity: 1;
+  transform: translateZ(0) rotate(0) scale(1)!important;
+  transition: all .3s ease-out!important;
+}
+
+.expanded .logo{
+  position:absolute;
+  top: 16px;
+  left: 16px;
+  width:200px;
+  height:60px;
+}
+
+.list a {
+  color:#232323;
+}
+
+.bar-subheader .button{
+  border-color:#ffffff;
+}
+.submenu {
+  border:0px;
+  color:#cacaca;
+  line-height:35px; 
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom:5px;
+}
+
+.submenu_selected{
+  border-radius:0px;
+  color:#ffffff;
+  border-color:white;
+  border-bottom:3px solid #ffffff;
+}
+
+.angular-google-map img { max-width: inherit!important; }
+
+.angular-google-map { width: 100%; height: 100%; }
+
+.scroll { height: 100%; }
+
+.noborder { border:none; }
+
+.thumbnail { width: 80px; height: 80px; border-radius: 4px; -webkit-border-radius: 4px; background:#cccccc; }
+
+/* Specify an height via CSS for the map container: */
+.angular-google-map-container { height: 100%; }
+
+.list .holder {
+  position: absolute;
+  top:10px;  
+  left:10px;
+  width:80px;
+  height:80px;
+}
+
+.list {
+  border-radius: 4px;
+}
+
+.list .title {
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+.list .description {
+  font-size:13px;
+  color:#9197a3;
+}
+
+.slide-holder {
+  background-size:cover;
+  height:300px;
+}
+
+/*** bootstrap ***/
+.label-default {
+  background-color: #777;
+}
+
+.label-primary {
+  background-color: #337ab7;
+}
+
+.label-success {
+  background-color: #5cb85c;
+}
+
+.label-info {
+  background-color: #5bc0de;
+}
+
+.label-warning {
+  background-color: #f0ad4e;
+}
+
+.label-danger {
+  background-color: #d9534f;
+}
+
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+
+.status-message {
+  font-size:12px;
+  color:#787878;
+}
+
+
+.border-table {
+  border: 1px solid #dddddd;
+  width:100%;
+  border-spacing: 0;
+}
+
+.border-table th {background-color: #f4f4f4;padding:5px;color: #222;border-collapse:collapse;border: 1px solid #ababab;font-size:12px;}
+.border-table tbody tr.selected td, .border-table tbody tr.selectable:hover td {
+  background: #dbdbdb;
+}
+.border-table tbody td {
+  font-size:12px;
+  border: 1px solid #ababab;
+  vertical-align: middle;
+  padding:5px;
+  border-top: 1px solid #ababab;
+}
+
+.subway {
+  letter-spacing:-1px;
+  white-space:nowrap;
+  font-family:dotum;
+  margin-left:3px;
+  position:relative;
+  border-radius:10px;
+  display: inline;
+  color:white;
+  font-size:10.5px;
+  padding:3px 6px 3px 4px; 
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+  text-shadow: 0 0 4px rgba(0,0,0,0.8);
+}
+
+.sub_1 {background-color:#3B61AB;}
+.sub_2 {background-color:#3CB44A;}
+.sub_3 {background-color:#EE5A2A;}
+.sub_4 {background-color:#6691C9;}
+.sub_5 {background-color:#C4A1D8;}
+.sub_6 {background-color:#AC774A;}
+.sub_7 {background-color:#606D00;}
+.sub_8 {background-color:#D81C67;}
+.sub_9 {background-color:#AD911D;}
+.sub_10 {background-color:#EDB217;}
+.sub_11 {background-color:#6691C9;}
+.sub_12 {background-color:#A8022D;}
+.sub_13 {background-color:#24A77D;}	/** 경춘 **/
+.sub_14 {background-color:#06BAB1;}	/** 경의중앙 **/
+.sub_15 {background-color:#85DFFF;}	/** 의정부 **/
+.sub_16 {background-color:#FF9B24;}	/** 공항 **/
+.sub_17 {background-color:#EBAA11;} /** 수인 **/
+.sub_18 {background-color:#89D800;} /** 에버라인 **/
+.sub_101 {background-color:#EE5A2A;}
+.sub_102 {background-color:#3CB44A;}
+.sub_103 {background-color:#B6971D;}
+.sub_104 {background-color:#426FB5;}
+.sub_105 {background-color:#893BB6;}
+.sub_201 {background-color:#37B42D;}
+.sub_301 {background-color:#F85757;} /** 대구지하철 1호선 **/
+.sub_302 {background-color:#29C531;} /** 대구지하철 2호선 **/
+.sub_303 {background-color:#F7BA21;} /** 대구지하철 3호선 **/
+.sub_401 {background-color:#29C531;} /** 광주지하철 1호선 **/
+
+
+
+/* Carousel */
+.rn-carousel-indicator { margin-top:-5px; max-width:100%; box-sizing: border-box; }
+
+li.rn-carousel-slide div.content {
+    box-sizing: border-box;
+    position:absolute;
+    bottom:5px;
+    background:rgba(0,0,0,0.7);
+    color:white;
+    font-size:16px;
+    width:100%;
+    padding:10px;
+    overflow: hidden;
+}
+
+.rn-carousel-container { max-width:100%; box-sizing: border-box; }
+
+.rn-carousel-control.rn-carousel-control-next:before {
+content: "\f105"; font-family: 'FontAwesome';
+}
+
+.rn-carousel-control.rn-carousel-control-prev:before {
+content: "\f104 "; font-family: 'FontAwesome';
+}
+
+.likes {
+  text-align:center;
+  border-top:1px solid #dfdfdf;
+}
+
+
+.likes a {
+  padding:10px;
+ line-height: 38px;
+  font-size:14px;
+}
+
+.cluster_s {
+  text-align:center;
+  width:30px;
+  height:30px;
+  line-height:30px;
+  background: url(../img/obSt.png) no-repeat;
+  letter-spacing:-1px;
+  white-space:nowrap;
+  color:white;
+  text-shadow: 0 0 4px rgba(0,0,0,0.8);
+  font-family: Arial,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.cluster_m {
+  text-align:center;  
+  width:40px;
+  height:40px;
+  line-height:40px;
+  background: url(../img/obMt.png) no-repeat;
+  letter-spacing:-1px;
+  white-space:nowrap;
+  color:white;
+  text-shadow: 0 0 4px rgba(0,0,0,0.8);
+  font-family: Arial,sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.cluster_l {
+  text-align:center;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  background: url(../img/obLt.png) no-repeat;
+  letter-spacing:-1px;
+  white-space:nowrap;
+  color:white;
+  text-shadow: 0 0 4px rgba(0,0,0,0.8);
+  font-family: Arial,sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+}

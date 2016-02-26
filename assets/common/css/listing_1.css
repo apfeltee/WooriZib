@@ -1,0 +1,47 @@
+.gallery_wrapper{
+	position:relative;
+	border: 1px solid #ddd;
+	border: 1px solid rgba(0,0,0,0.15);
+	background-color: #fff;
+	border-radius: 2px;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+	-webkit-transition: border 0.3s ease,box-shadow 0.3s ease;
+	transition: border 0.3s ease,box-shadow 0.3s ease;
+	height:60px;
+}
+
+.address{color: #777;letter-spacing:-1px;margin-bottom:5px;}
+
+.videourl {
+	opacity:0.7; 
+	text-align:center;
+}
+
+.meta_cell {
+	display:block;
+	width:100%;
+	margin-bottom:5px;
+}
+
+.meta_cell .help{
+	display:inline;
+}
+
+
+h1.filter-title {
+    background: url(http://newsmartwave.net/magento/porto/skin/frontend/smartwave/porto/images/slider-bar.png) right no-repeat;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 42px;
+    margin: 0;
+    color: #313131;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+h1.filter-title .content {
+    background-color: #fff;
+    padding-right: 20px;
+    display: inline;
+}

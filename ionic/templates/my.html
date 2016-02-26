@@ -1,0 +1,295 @@
+<ion-view title="매물관리">
+    
+    <ion-header-bar class="bar-subheader bar-stable">
+        <div class="row">
+          <div class="col">
+            <fancy-select
+                header-text="매물유형"
+                allow-empty='true'
+                value="category"
+                text="categoryies_label"
+                items="categories"
+                single-select="true"
+                >
+            </fancy-select>
+          </div>
+
+          <div class="col">
+             <fancy-select
+                header-text="매매유형"
+                allow-empty='true'
+                value="type"
+                text="types_label"
+                items="types"
+                single-select="true"
+                >
+            </fancy-select>
+          </div>
+
+          <div class="col">
+             <fancy-select
+                header-text="지역"
+                allow-empty='true'
+                value="local"
+                text="locals_label"
+                items="locals"
+                local-select="true"
+                >
+            </fancy-select>
+          </div>
+          <div class="col" ng-show="company.subway">
+                 <fancy-select
+                    header-text="지하철"
+                    allow-empty='true'
+                    value="subway"
+                    text="subways_label"
+                    items="subways"
+                    subway-select="true"
+                    >
+                </fancy-select>            
+          </div>
+        </div>
+    
+    </ion-header-bar>
+
+    <ion-content class="has-header has-footer" delegate-handle="mainScroll">
+                
+        <div ng-show="listtype == 'map'" style="width:100%;height:100%" data-tap-disabled="true"> 
+
+                <ui-gmap-google-map 
+                    control="map.control"
+                    refresh="true" 
+                    ng-if="render" 
+                    center="map.center" 
+                    events="map.events" 
+                    zoom="map.zoom" 
+                    pan="true" 
+                    draggable="true">
+
+                    <ui-gmap-marker 
+                        idkey="marker.id" 
+                        ng-repeat="marker in map.markers" 
+                        coords="marker" 
+                        icon="map.icon" 
+                        options="{labelContent: marker.count,labelClass: marker.class,labelStyle: {top: '0px', left: '0px', opacity: 0.85}}"
+                        isLabel='true' 
+                        click="go(marker.id,marker.lat,marker.lng,map.zoom)">
+
+                    </ui-gmap-marker>
+
+                </ui-gmap-google-map>
+
+        </div>
+
+        <div ng-show="listtype == 'list'"> 
+            <section  ng-repeat="post in posts">
+                <div style="border-bottom:1px solid #dfdfdf;">
+                    <div class="list" style="background-color:white;">
+                        
+                        <a class="item item-thumbnail-left" ng-click="open(post.id,'home')" >
+                            
+                            <div class="holder" style="background:url({{(post.thumb_name!=null&&post.thumb_name!='')&&company.host+'/uploads/gallery/'+post.id+'/'+post.thumb_name||'img/no_thumb.png'}});background-size:cover;"></div>
+                            <p class="description">
+                                <span ng-show="{{post.recommand}}" class="label label-info">추천</span>
+                                <span ng-show="{{post.is_finished}}" class="label label-danger">판매완료</span>
+                                <span ng-show="{{post.is_speed}}" class="label label-warning">급매</span>
+                                {{post.address_name}}
+                            </p>
+                            <h2>
+                                {{post.title}}
+                            </h2>
+                            <p ng-bind-html="renderHtml(helpers.price(post))"></p>
+                            <div class="description">
+                                {{post.abstract}}
+                            </div>
+                            
+                        </a>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <div align="center" class="status-message">
+                <span ng-bind="msg"></span>
+            </div>
+
+            <div align="center" class="padding-horizontal padding-bottom">
+                <button class="button button-block button-small button-positive" ng-show="hasMoreItems()" ng-click="showMoreItems()" >
+                <i class="icon ion-arrow-down-b"></i> 더 보기
+                </button>
+            </div>
+        </div>
+                   
+        <!--section  ng-repeat="post in posts">
+            <div class="list card" style="margin-top:0px;margin-bottom:20px;">
+                <div class="item item-avatar">
+                    <img src="{{post.member_profile!='' && company.host+'/uploads/member/'+post.member_profile || 'img/no_human.png'}}">
+                    <h2>{{post.address_name}}{{company.host}}</h2>
+                    <p ng-bind-html="renderHtml(helpers.price(post))"></p>
+                </div>
+                <div class="padding" stylte="border:0px;">
+                    <div class="title">
+                        <span ng-show="{{post.recommand}}" class="label label-info">추천</span>
+                        <span ng-show="{{post.is_finished}}" class="label label-danger">판매완료</span>
+                        <span ng-show="{{post.is_speed}}" class="label label-warning">급매</span>
+                        <a  href="#/app/property/{{post.id}}/home">{{post.title}}</a>
+                    </div>
+                </div>
+                <div class="item-image">
+                    <a href="#/app/property/{{post.id}}/home"><img ng-show="post.thumb_name!=''" class="full-image" ng-src="{{company.host}}/uploads/products/thumb/{{post.thumb_name}}"></a>
+                </div>                    
+                <div class="padding">
+                    <p class="subdued">
+                      {{post.abstract}}
+                    </p>
+                    <div class="description">
+                        등록일시 {{post.date}}
+                    </div>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" href="#" ng-click="hope_add(post)" ng-show="post.hope_cnt==0">
+                      <i class="icon ion-ios-heart"></i> 찜하기
+                    </a>
+                    <a class="tab-item" href="#" ng-click="hope_remove(post)" ng-hide="post.hope_cnt==0">
+                      <i class="icon ion-ios-heart" style="color:blue;"></i> 찜취소
+                    </a>
+                    <a class="tab-item" href="tel:{{post.member_phone}}">
+                        <i class="icon ion-social-whatsapp"></i> 전화문의({{post.member_name}})
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div align="center" class="status-message">
+            <span ng-bind="msg"></span>
+        </div>
+
+        <div align="center" class="padding-horizontal padding-bottom">
+            <button class="button button-block button-small button-positive" ng-show="hasMoreItems()" ng-click="showMoreItems()" >
+            <i class="icon ion-arrow-down-b"></i> 더 보기
+            </button>
+        </div>
+    </div-->
+       
+</ion-content>
+
+    <div class="tabs-striped tabs-color-assertive">
+        <div class="tabs tabs-icon-left">
+          <a class="tab-item" ng-class="{'active':listtype=='list'}" ng-click="setListtype('list')">
+            <i class="icon ion-images"></i>
+            목록
+          </a>
+          <a class="tab-item" ng-class="{'active':listtype=='map'}" ng-click="setListtype('map')">
+            <i class="icon ion-map"></i>
+            지도
+          </a>
+        </div>
+
+    </div>
+
+
+</ion-view>
+
+<script id="fancy-select.html" type="text/ng-template">
+<ion-list>
+  <ion-item ng-click="showItems($event)" class="item-icon-right" style="padding:0px;color:white;">
+    {{text}}
+    <i class="icon ion-android-arrow-dropdown" style="right:0px;with:10px;font-size:20px;width:10px;"></i>
+  </ion-item>
+</ion-list>
+</script>
+
+<script id="fancy-select-items.html" type="text/ng-template">
+<ion-view class="fancy-select-items modal">
+  <ion-header-bar class="bar-positive">
+
+    <div class="buttons">
+    <button ng-click="hideItems()" class="button button-clear button-icon ion-ios-arrow-left"></button>
+    </div>
+
+    <h1 class="title">{{headerText}}</h1>
+
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <!-- Multi select -->
+      <div ng-if="subwaySelect">
+
+        <div ng-hide="data.hosun">
+            <ion-radio
+                name="hosun"
+                ng-click="selectall()"
+                >전체</ion-radio>
+
+            <ion-radio 
+                ng-repeat="item3 in items.hosuns"
+                ng-value="item3.hosun"
+                ng-model="$parent.data.hosun"
+                name="hosun">{{item3.hosun}} 호선</ion-radio>
+        </div>
+
+        <div ng-show="data.hosun">
+            <ion-radio
+                name="subway"
+                ng-click="selectall()"
+                >전체</ion-radio>
+
+            <ion-radio
+                name="subway"
+                ng-click="data.hosun=''"
+                >호선선택</ion-radio>
+           
+            <ion-radio 
+                name="subway"
+                ng-model="data.subway" ng-repeat="item in items.subways" ng-show="item.hosun==data.hosun" ng-value="item.name"
+                ng-click="selectsubway(item)">{{item.name}} </ion-radio>
+        </div>
+
+      </div>
+      <div ng-if="localSelect">
+
+        <div ng-hide="data.sido">
+            <ion-radio
+                name="sido"
+                ng-click="selectall()"
+                >전체</ion-radio>
+
+            <ion-radio 
+                ng-repeat="item in items.sidos"
+                ng-value="item.sido"
+                ng-model="$parent.data.sido"
+                name="sido">{{item.sido}} </ion-radio>
+        </div>
+        
+        <div ng-show="data.sido">
+            <ion-radio
+                name="gugun"
+                ng-click="selectall()"
+                >전체</ion-radio>
+
+            <ion-radio
+                name="gugun"
+                ng-click="data.sido=''"
+                >시도선택</ion-radio>
+            
+            <ion-radio 
+                name="gugun"
+                ng-model="data.gugun" ng-repeat="item in items.guguns" ng-show="item.sido==data.sido" ng-value="item.gugun"
+                ng-click="selectgugun(item)">{{item.gugun}} </ion-radio>
+        </div>
+
+
+      </div>
+      <div ng-if="singleSelect">
+          <label
+                 ng-repeat="item in items"
+                 ng-if="!multiSelect"
+                 class="item item-text-wrap"
+                 ng-click='validateSingle(item)'>
+            {{item.text}}
+          </label>
+       </div>
+    </div>
+  </ion-content>
+</ion-view>
+</script>

@@ -1,0 +1,76 @@
+#1455601927
+ls
+#1455602016
+cd Lib
+#1455602017
+ls
+#1455602593
+exit
+#1455604837
+ls
+#1455604841
+mysql
+#1455604863
+ls
+#1455604883
+exit
+#1455604904
+ls
+#1455604905
+cd ..
+#1455604906
+ls
+#1455604908
+cd ..
+#1455604909
+ls
+#1455604926
+cd home/tago/
+#1455604927
+ls
+#1455604935
+cd application/
+#1455604935
+ls
+#1455604938
+cd ..
+#1455604939
+ls
+#1455604998
+mysql
+#1455605065
+mysql -uroot -p
+#1455607558
+mysql
+#1455842184
+mysql -uwoorizib -p
+#1455842346
+mysqldump
+#1455842378
+mysqldump -uwoorizib -p woorizib dol.sql
+#1455842402
+mysqldump -uwoorizib -p woorizib > dol.sql
+#1455842589
+mysql --version
+#1455860345
+ssh 115.68.185.216
+#1455860388
+ssh 115.68.183.118
+#1455860868
+vi /etc/sysconfig/iptables
+#1455861000
+ssh 115.68.183.118
+#1455863028
+exit
+#1456187562
+mysql
+#1456187669
+mysqldump -uwoorizib -p woorizib > wrzdb.sql
+#1456187711
+ls
+#1456187725
+/q
+#1456187728
+quit
+#1456187742
+exit

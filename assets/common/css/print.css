@@ -1,0 +1,24 @@
+.border-table {
+	font-size:13px;
+	margin: 10px 5px 10px 5px;
+	border: 1px solid #dddddd;
+	width:99%;
+	border-spacing: 0;
+}
+
+.border-table th {background-color: #f4f4f4;padding:5px;color: #222;border-collapse:collapse;border: 1px solid #dddddd;}
+
+.border-table tbody tr.selected td, .border-table tbody tr.selectable:hover td {
+	background: #dbdbdb;
+}
+
+.border-table tbody td {
+	border: 1px solid #dddddd;
+	vertical-align: middle;
+	padding:5px;
+	border-top: 1px solid #dddddd;
+}
+
+.print_only {
+  display:block;  
+}

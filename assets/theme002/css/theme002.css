@@ -1,0 +1,60 @@
+.header {
+	box-shadow: 0 0px 0px #000;
+}
+
+.submenu .col-lg-2 {
+	width:20%;
+}
+
+.submenu img {
+	margin:5px 5px 10px 5px;
+}
+
+.logoarea {
+	padding:20px 0px 20px 0px;
+	text-align:center;
+}
+
+.logoarea .img-responsive {
+    margin: 0 auto;
+}
+
+hr.hr_narrow {
+    margin: 0;
+    clear: both;
+    width: 100%;
+	height:0px;
+	margin-bottom:20px;
+	border-top:1px solid #222;
+}
+
+.text-left h1 {
+	font-size:26px;
+	font-weight:900;
+	padding-left:50px;
+}
+
+.text-left h1 i {
+	position:absolute;
+	top:6px;
+	left:0px;
+	font-size:45px;
+	color:#910a3a;
+	margin-bottom:-29px;
+}
+
+.home_section {
+    padding: 25px 0px 25px 0px;
+}
+
+.text-left .btn-group {
+	float:right;
+}
+
+#home_map{
+  height:400px;
+}
+
+.search-box {
+    margin-top: -380px;
+}

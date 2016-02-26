@@ -1,0 +1,362 @@
+#map{
+	width:100%;
+	height:500px;
+}
+
+.map_wrapper{
+	padding-right:352px;
+	position:relative;
+	height:100%;
+}
+
+#point_map{
+	border:1px solid #cacaca;
+	width:100%;
+	height:100%;
+}
+
+#point_map * {
+	-webkit-box-sizing: content-box;
+ 	-moz-box-sizing: content-box;
+ 	box-sizing: content-box;
+}
+
+.map_list_wrapper {
+	width:361px;
+	border-radius:5px;
+	padding:3px 0px 3px 3px;
+	background-color: #454545;
+}
+
+.map_list_wrapper i{
+	padding-left:5px;
+}
+.map_list_wrapper a{
+	font-size:12px;
+}
+
+.map_list{
+	width:355px;
+	height:167px;
+	overflow-y: auto;
+	background-color:#ffffff;
+	
+	background-repeat:repeat;
+	border:1px solid #efefef;
+}
+	
+#search_section {
+	padding:10px;
+	border-right:1px solid #cacaca;
+	background-color: #FEFEFE;
+	position:absolute;
+	width:250px;
+	top:0px;
+	left:0px;
+	height:100%;
+	overflow-y:auto;
+	overflow-x:hidden;
+	z-index:99;
+}
+
+
+#search-map {overflow-x:hidden;}
+#search_section ul:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#search_section .btn {
+	padding: 3px 5px;
+}
+
+.sorting_select {
+	float:right;
+	width:auto;
+	font-size:11px;
+	line-height:30px;
+	height:28px;
+	margin-right:10px;
+}
+
+#center_address {line-height:28px;letter-spacing:-1px;font-size:12px;}
+
+/**** search button ***/
+.pocp_button_left.btn_active {
+  left: 260px;
+}
+
+.pocp_button_left {
+  left: 20px;
+}
+
+.pocp_button {
+  position: absolute;
+  z-index: 99;
+  top: 20px;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  text-decoration: none;
+  padding: 7px 12px;
+  background: #191919;
+  outline: none;
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s 0.2s;
+  -moz-transition: all 0.3s 0.2s;
+  -o-transition: all 0.3s 0.2s;
+  transition: all 0.3s 0.2s;
+}
+
+.marker{
+	font-size:13px;
+	font-weight:300;
+	color:white;
+	border-radius:5px;
+	white-space: nowrap;
+	text-align: center;
+	z-index: 100;
+}
+
+.marker .installation {
+	border-radius:5px;
+	border:1px solid #f39c12;	
+	padding:4px;
+	color: #f39c12;
+}
+.marker .sell {
+	border-radius:5px;
+	border:1px solid #D22129;	
+	padding:4px;
+	color: #D22129;
+}
+.marker .full_rent {
+	border-radius:5px;
+	border:1px solid #3865C0;	
+	padding:4px;
+	color: #3865C0;
+}
+.marker .monthly_rent {
+	border-radius:5px;
+	border:1px solid #209F4E;	
+	padding:4px;
+	color: #209F4E;
+}
+.marker .rent {
+	border:1px solid #3865C0;	
+	padding:4px;
+	color: #3865C0;
+}
+.marker span{
+	font-weight:bold;
+	background-color:#FFFFFF;
+}
+
+.gugun {
+	line-height:14px;
+	padding: 0px;
+	background-color: #292929;
+	text-align: center;
+	position: absolute;
+	left: -40px;
+	top: -17px;
+	border: 3px solid #121212;
+	border-radius:5px;
+}
+
+.gugun a {font-size:12px;padding:4px 2px 4px 2px;font-family:"Malgun Gothic";color: #fff;}
+
+.ifbox {
+	border-radius:10px;
+	background-color:#fff;
+	padding:0px;
+    border:1px solid #666;
+	margin-top:8px;
+    color:#000;
+    font-family:"Malgun Gothic", Arial, Helvetica, sans-serif;
+    font-size:12px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 0  8px #ccc;
+    box-shadow: 0 0 8px #ccc;
+}
+
+/**
+ * 모바일에서 클러스터 클릭시 보여주는 항 목
+ */
+#clusterlist {
+    z-index:100;
+    position: fixed;
+    display:none;
+    height:100%;
+    width:100%;
+    background:#ffffff;
+    top:0px;
+    left:0px;
+	box-sizing: border-box;
+	padding:10px;
+}
+
+div.clusterClose {
+    background: url(/assets/common/img/closebox.png) no-repeat;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+	z-index:1000;
+}
+
+#clusterlist_inner {
+	margin-top:35px;
+    height: 90%;
+    width:100%;
+	border:1px solid #cacaca;
+	overflow:auto;
+}
+
+#clusterlist_inner strong{
+	color: #333333;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#clusterlist_inner a{
+    font-size:13px;
+	color:#FF2558;
+}
+
+
+/*** 맵 확대를 위한 스타일 ***/
+
+#map_list{
+	position:absolute;
+	width:350px;
+	top:0px;
+	right:0px;
+	height:100%;
+	overflow-y:auto;
+}
+	
+	/* dungzi */
+	.maplist_1 {width:350px;}
+
+	/* dabang */
+	.maplist_2 {width:380px;}
+
+	/* zigbang */
+	.maplist_3 {width:380px;}
+
+	/* zillow */
+	.maplist_4 {width:600px;}
+
+
+.relist{
+	margin-bottom:2px;
+	margin-right:2px;
+	background-color:#ffffff; 
+}
+
+.relist:hover {
+	background-color:#efefef; 
+}
+
+.info_image {
+	overflow:hidden;
+	width:110px;
+	float:left;
+}
+
+.info_image img {
+	width:100px;
+	height:70px;
+	margin:5px;
+}
+
+
+.info_desc {
+	letter-spacing:-1px;
+	font-size:12px;
+	line-height:2em;
+	padding:0px 0px 4px 4px;
+	float:left;
+}
+
+.info_desc .address{
+	letter-spacing:-1px;
+	color:#787878;
+}
+
+.info_desc .label {
+	font-size:11px;
+	padding: 2px 3px 2px 2px;
+}
+
+.relist strong{
+	color: #EE5555;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.relist a{
+    font-size:13px;
+}
+
+.relist img{
+	border: 1px solid #ddd;
+	border: 1px solid rgba(0,0,0,0.15);
+	background-color: #fff;
+	border-radius: 2px;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+	-webkit-transition: border 0.3s ease,box-shadow 0.3s ease;
+	transition: border 0.3s ease,box-shadow 0.3s ease;
+}
+
+#loading {
+	width:100%;
+	display:none;
+	position:absolute;
+	top:70px;
+	text-align: center;
+	z-index:1000;
+	font-size:100px;
+}
+
+.cluster_s {
+	letter-spacing:-1px;
+	white-space:nowrap;
+	color:white;
+	text-shadow: 0 0 4px rgba(0,0,0,0.8);
+	font-family: Arial,sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.cluster_m {
+	letter-spacing:-1px;
+	white-space:nowrap;
+	color:white;
+	text-shadow: 0 0 4px rgba(0,0,0,0.8);
+	font-family: Arial,sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.cluster_l {
+	letter-spacing:-1px;
+	white-space:nowrap;
+	color:white;
+	text-shadow: 0 0 4px rgba(0,0,0,0.8);
+	font-family: Arial,sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+}

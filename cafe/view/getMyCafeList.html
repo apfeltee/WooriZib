@@ -1,0 +1,66 @@
+<?php
+if(!$_GET['id']) $_GET['id'] = $_SESSION["c_id"];
+if($_SESSION["c_type"]) $_GET['type'] = $_SESSION["c_type"];
+
+$DB_CONNECT = mysql_connect($MYSQL_HOST, $MYSQL_ID, $MYSQL_PASSWORD);
+mysql_select_db($MYSQL_DB, $DB_CONNECT);
+mysql_query("SET NAMES 'utf8'");
+if ( !$DB_CONNECT ) {echo "mysql 데이터 베이스에 연결할 수 없습니다."; exit;}
+
+if($_GET['type']=='news'){
+	$sql = "select title from news where id='".$_GET['id']."'";
+}
+else{
+	$sql = "select title from products where id='".$_GET['id']."'";
+}
+
+$query = mysql_query($sql);
+$row = mysql_fetch_array($query);
+
+function cut($text, $len) {
+		$text = strip_tags($text);
+		$text = str_replace("&nbsp;","",$text);
+		if(strlen($text)<=$len) {
+			return $text;
+		} else {
+			$text = htmlspecialchars_decode($text);
+			$text = mb_strcut($text, 0, $len, 'utf-8');
+			$text = htmlspecialchars($text);
+			return $text."…";
+		}
+
+		return $text;
+} 
+?>
+<div class="cafe_loading"><span>카페글 등록중 입니다 <i class="fa fa-spinner fa-spin"></i></span></div>
+<div class="modal-header" style="font-size:18px;"><strong>카페등록하기</strong></div>
+<form name="cafe_form" id="cafe_form" action="/admincafeapi/cafe_auth" method="post">
+<div class="modal-body">
+	<input type="hidden" name="id" id="id" value="<?php echo $_GET['id'];?>"/>
+	<input type="hidden" name="type" id="type" value="<?php echo $_GET['type'];?>"/>
+	<div class="form-group">
+		<textarea class="form-control" id="cafe_title" name="cafe_title" rows="4" maxlength="100"/><?php echo cut($row['title'],200);?></textarea>
+		<label style="margin-top:10px;"># 내가 가입한 카페</label>
+		<select class="form-control" id="cafe_id" name="cafe_id" onchange="get_article(this.value);">
+		<option value="">카페 선택</option>
+		<?php
+			foreach($result->result->myCafes->myCafe as $value){
+				echo '<option value="'.$value->clubid.'">'.$value->clubname.'</option>';
+			}
+		?>
+		</select>
+	</div>
+	<div class="form-group" id="menu_list" style="min-height:60px;margin:0px 0px 20px 0px;"></div>
+	<label># 이미 등록된 카페 제목</label>
+	<div class="well" id="history_list" style="height:270px;overflow-y:auto;padding-top:10px;">카페 등록 이력이 없습니다.</div>
+	<div class="help">※나의카페 목록과 카페 글등록은 인증을 별도로 받아야 합니다.</div>
+	<div class="help">※등록중에는 시간이 다소 소요될 수 있습니다.</div>
+</div>
+<div class="modal-footer" style="text-align:center;">
+	<button type="button" onclick="cafe_upload();" class="btn btn-primary btn-lg">등록</div>
+</div>
+</form>
+<?php
+echo mysql_error();
+mysql_close();
+?>

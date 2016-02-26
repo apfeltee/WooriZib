@@ -1,0 +1,72 @@
+<div class="modal">
+  <ion-header-bar class="bar bar-header bar-stable">
+    <h1 class="title">가격 검색</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePrice()"><i class="icon ion-ios-close"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content ng-controller="PriceCtrl">
+        
+        <div class="item item-divider">매매, 분양(매매가, 실입주금) (단위:억원)</div>
+        <ul class="list" style="margin-bottom:0px;">
+            <li style="padding-top:10px;" class="padding">
+                <slider 
+                    floor="0"
+                    step="1"
+                    ceiling="{{sellprice.maxBasic}}" 
+                    ng-model-low="sellprice.minVal" 
+                    ng-model-high="sellprice.maxVal" 
+                    translate="currencyFormatting" 
+                    style="width:95%;">
+                </slider>
+            </li>
+        </ul>
+        <div class="item item-divider" ng-hide="company.installation_flag">전세(보증금) (단위:만원)</div>
+        <ul class="list" style="margin-bottom:0px;" ng-hide="company.installation_flag">
+            <li style="padding-top:10px;" class="padding">
+                <slider 
+                    floor="0" 
+                    step="100"
+                    ceiling="{{fullrentprice.maxBasic}}" 
+                    ng-model-low="fullrentprice.minVal" 
+                    ng-model-high="fullrentprice.maxVal" 
+                    translate="currencyFormatting" 
+                    style="width:95%;"></slider>
+            </li>
+        </ul>
+        <div class="item item-divider" ng-hide="company.installation_flag">월세(보증금/월세) (단위:만원)</div>
+        <ul class="list" style="margin-bottom:0px;" ng-hide="company.installation_flag">
+            <li style="padding-top:10px;" class="padding">
+                <slider 
+                    floor="0" 
+                    step="50"
+                    ceiling="{{rentdepositprice.maxBasic}}" 
+                    ng-model-low="rentdepositprice.minVal" 
+                    ng-model-high="rentdepositprice.maxVal" 
+                    translate="currencyFormatting" 
+                    style="width:95%;"></slider>
+            </li>
+            <li style="padding-top:10px;" class="padding">
+                <slider 
+                    floor="0" 
+                    step="10"
+                    ceiling="{{rentmonthprice.maxBasic}}" 
+                    ng-model-low="rentmonthprice.minVal" 
+                    ng-model-high="rentmonthprice.maxVal" 
+                    translate="currencyFormatting" 
+                    style="width:95%;"></slider>
+            </li>
+        </ul>      
+
+        <div align="center" class="list padding-horizontal">
+            <button class="button button-block button-positive" ng-click="save();closePrice();">
+            가격 검색 적용하기
+            </button>
+        </div>
+
+
+  </ion-content>
+</div>
+
+
+

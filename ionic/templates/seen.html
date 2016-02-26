@@ -1,0 +1,33 @@
+<ion-view title="본 매물">
+    <ion-content>
+        <div align="center" class="status-message">
+            <span ng-bind="msg"></span>
+        </div>    
+        <section  ng-repeat="post in posts">
+            <div style="border-bottom:1px solid #dfdfdf;">
+                <div class="list" style="background-color:white;">
+                    
+                    <a class="item item-thumbnail-left" ng-click="open(post.id,'seen')" >
+                        
+                        <div class="holder" style="background:url({{(post.thumb_name!=null&&post.thumb_name!='')&&company.host+'/uploads/gallery/'+post.id+'/'+post.thumb_name||'img/no_thumb.png'}});background-size:cover;"></div>
+                        <p class="description">
+                            <span ng-show="{{post.recommand}}" class="label label-info">추천</span>
+                            <span ng-show="{{post.is_finished}}" class="label label-danger">판매완료</span>
+                            <span ng-show="{{post.is_speed}}" class="label label-warning">급매</span>
+                            {{post.address_name}}
+                        </p>
+                        <h2>
+                            {{post.title}}
+                        </h2>
+                        <p ng-bind-html="renderHtml(helpers.price(post))"></p>
+                        <div class="description">
+                            {{post.abstract}}
+                        </div>
+                        
+                    </a>
+                    
+                </div>
+            </div>
+        </section>   
+    </ion-content>
+</ion-view>
