@@ -9,7 +9,7 @@
 			</ul>
 		</div>
 		<div>
-			<div class="row margin-bottom-40">
+			<div class="row">
 				<div class="join_top">
 					<p class="text-center signup_btn_1">
 						<a href="/member/signup/biz"><img src="/uploads/notices/top_btn.png" alt="중개사 회원가입 버튼" /></a>

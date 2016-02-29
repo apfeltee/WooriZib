@@ -259,13 +259,13 @@ Pre-Footer and pre-footer elements
 .pre-footer {
   /*background: #313030;*/
   /*dd*/
-  background: #fff !important;
-  color: #b0b0b0;
-  margin-bottom: 50px;
+  background: #676767 !important;
+  color: #c5c5c5;
+  padding-bottom: 50px;
 }
 
 .pre-footer a {
-  color: #57c8eb;
+  color: #c5c5c5 !important;
 }
 .pre-footer p {
   margin-bottom: 20px;
@@ -276,6 +276,7 @@ Pre-Footer and pre-footer elements
 .pre-footer address {
   line-height: 1.7;
   font-size: 11px;
+  color: #c5c5c5;
 }
 
 .pre-footer hr {
@@ -765,7 +766,7 @@ ul.ui-autocomplete.ui-menu{
 .footer_logo {
   width:200px;
   /*dd*/
-  margin-top: 75px;
+  margin-top: 40px;
 }
 
 /***

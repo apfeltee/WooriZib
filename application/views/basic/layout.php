@@ -264,21 +264,17 @@ $title = urlencode($config->name);
 						<?php echo anchor("home/rule",lang("menu.uselaw"));?> | 
 						<strong><?php echo anchor("home/privacy",lang("menu.infolaw"));?></strong>  
 						<a href="/adminlogin/" target="_blank"><i class="fa fa-cogs fc-lightgray"></i></a></br></br>
-						상호 : (주)트랜스폼 <?php echo lang("site.ceo");?>: <?php echo $config->ceo;?><br/>
-						<span  class="help" data-toggle="tooltip" title="<?php echo toeng($config->address);?>"><i class="fa fa-map-marker"></i> <?php echo toeng($config->new_address);?></span></br>
+						상호: (주)트랜스폼 | 대표: <?php echo $config->ceo;?><br/>
+						<span  class="help" data-toggle="tooltip" title="<?php echo toeng($config->address);?>"><?php echo toeng($config->new_address);?></span> | <?php echo lang("site.fax");?>: <?php echo $config->fax;?> </br>
 						<?php echo lang("site.biznum");?>: <?php echo $config->biznum;?> 
-						<?php if($config->renum!=""){?>| <?php echo lang("site.renum");?>: <?php echo $config->renum;?><?php } ?><br>
-						<i class="fa fa-phone"></i> <?php echo lang("site.tel");?>: <?php echo $config->tel;?> | 
-						<i class="fa fa-phone"></i> <?php echo lang("site.fax");?>: <?php echo $config->fax;?> <br>
-						<?php if($config->email!=""){?><i class="fa fa-envelope"></i> <a href="mailto:<?php echo $config->email;?>"> <?php echo $config->email;?></a><?php }?>	
+						<?php if($config->renum!=""){?>| <?php echo lang("site.renum");?>: <?php echo $config->renum;?><?php } ?> | <?php echo lang("site.tel");?>: <?php echo $config->tel;?>  | 
+						<?php if($config->email!=""){?>이메일: <a href="mailto:<?php echo $config->email;?>"> <?php echo $config->email;?></a><?php }?>	
 						<?php if($config->DUNGZI=="1"){?>.powered by <a href="http://www.dungzi.com/" target="_blank">dungzi.com</a><br><?php }?></br>
 						Copyright © TRANSFORM. All right reserved.
 						</address>
 						<ul class="list-unstyled list-inline">
 							<?php if(isset($social->naver_cafe) && $social->naver_cafe){?>
 							<li><a href="http://<?php echo $social->naver_cafe;?>" target="_blank"><img src="/assets/common/img/icon_cafe.png"></a></li>
-							<?php } if(isset($social->naver_blog) && $social->naver_blog){?>
-							<li><a href="http://<?php echo $social->naver_blog;?>" target="_blank"><img src="/assets/common/img/b.jpg"></a></li>
 							<?php } if(isset($social->facebook) && $social->facebook){?>
 							<li><a href="http://<?php echo $social->facebook;?>" target="_blank"><img src="/assets/common/img/f.png"></a></li>
 							<?php } if(isset($social->twitter) && $social->twitter){?>
@@ -288,8 +284,11 @@ $title = urlencode($config->name);
 							<?php } if(isset($social->youtube_channel) && $social->youtube_channel){?>
 							<li><a href="http://<?php echo $social->youtube_channel;?>" target="_blank"><img src="/assets/common/img/icon_youtube.png"></a></li>
 							<?php }?>
-							<li><a href="http://" target="_blank"><img src="/assets/common/img/i.png"></a></li>
-							<li><a href="http://" target="_blank"><img src="/assets/common/img/k.png"></a></li>
+							<li><a href="https://www.instagram.com/woorizibapp" target="_blank"><img src="/assets/common/img/i.png"></a></li>
+							<li><a href="https://story.kakao.com/ch/woorizibapp" target="_blank"><img src="/assets/common/img/k.png"></a></li>
+							<?php if(isset($social->naver_blog) && $social->naver_blog) {?>
+							<li><a href="http://<?php echo $social->naver_blog;?>" target="_blank"><img src="/assets/common/img/b.png"></a></li>
+							<?php } ?>
 						</ul>
 					</div>
 					<div class="col-md-3 col-sm-3 pre-footer-col">

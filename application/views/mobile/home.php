@@ -67,39 +67,39 @@ function go_search(name,value){
     
     <a href="tel:<?php echo $config->tel;?>"><div class="call-button icon ion-ios-telephone"></div></a>
     <div class="grid">
-      <div class="col-1-2">
+      <div class="col-1-1 btn_search">
          <div class="content">
-			  <a href="/mobile/map/clear" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
+			  <a href="/mobile/search" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
 					<!-- <div class="btn_map btn-1-2 grid_btn"></div> -->
-          <img src="/assets/mobile/images/transform/btn_map.jpeg">
+          <img src="/uploads/images/search1.jpg">
 					<!-- <?php echo lang("site.map");?> <?php echo lang("site.search");?> -->
 			  </a>
          </div>
       </div>
-      <div class="col-1-2">
+      <div class="col-1-3 btn_search">
          <div class="content">
-			  <a href="/mobile/grid" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
+			  <a href="/mobile/map/clear" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
 					<!-- <div class="btn_list btn-2-2 grid_btn"></div> -->
-          <img src="/assets/mobile/images/transform/btn_list.jpg">
+          <img src="/uploads/images/search2.jpg">
 					<!-- <?php echo lang("site.list");?> <?php echo lang("site.search");?> -->
 			  </a>
          </div>
       </div>
-      <div class="col-1-2">
+      <div class="col-1-3 btn_search">
          <div class="content">
-			  <a href="/mobile/area" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
+			  <a href="/mobile/grid" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
 					<!-- <div class="btn_location btn-1-2 grid_btn"></div> -->
-          <img src="/assets/mobile/images/transform/btn_location.jpg">
+          <img src="/uploads/images/search3.jpg">
 					<!-- 지역 <?php echo lang("site.search");?> -->
 			  </a>
          </div>
       </div>
-      <div class="col-1-2">
+      <div class="col-1-3 btn_search">
          <div class="content">
 			  <!-- <a href="/mobile/subway" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>> -->
-        <a href="/mobile/search" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
+        <a href="/mobile/area" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
           <!-- <div class="btn_detail btn-2-2 grid_btn"></div> -->
-          <img src="/assets/mobile/images/transform/btn_detail.jpg">
+          <img src="/uploads/images/search4.jpg">
 					<!-- <?php echo lang("site.subway");?> <?php echo lang("site.search");?> -->
 			  </a>
          </div>
@@ -149,7 +149,17 @@ function go_search(name,value){
       <h2 class="title-new">공지사항</h2>
       <div class="grid grid-pad">
       <a href="">
-        <img src="/uploads/images/notice-img.png">
+        <img src="/uploads/images/news_img_m.png">
+      </a>
+      </div>
+    </div>
+
+    <div class="youtube_area">
+      <div class="separator-fields" style="margin-top:10px;"></div>
+      <h2 class="title-new">CF</h2>
+      <div class="grid grid-pad">
+      <a class="youtube" href="https://www.youtube.com/watch?v=vjLof854P_Q">
+        <img src="/uploads/images/youtube_m.jpg" />
       </a>
       </div>
     </div>
