@@ -22,11 +22,24 @@
 .title-new {
   padding-left:10px;
   border-left:4px solid #<?php echo $skin_color; ?>;  
+  line-height: 12px;
+}
+
+.mobile-wrapper .grid-pad.grid {
+  margin-top: 10px;
+}
+
+.mobile-wrapper .grid-pad .col-1-3 {
+  padding-right: 0;
+}
+
+.mobile-wrapper .grid-pad .col-1-3 a {
+  color: #737373;
 }
 
 .category {
-  background-color: #E3E6EB;    
-  border:1px solid #efefef;
+  background-color: #fff;    
+  border:1px solid #dfdfdf;
   padding:5px 3px 3px 3px;
   margin:3px;
   border-radius:5px

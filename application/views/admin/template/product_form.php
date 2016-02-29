@@ -10,6 +10,7 @@
 			<!-- 기본 정보입니다. -->
 		</div>
 	</div>
+<!--14아파트, 12빌라 19분양권-->
 	<div class="portlet-body form">
 		<div class="form-body">
 			<div class="form-group">
@@ -132,10 +133,13 @@
 							<option value="">아파트단지선택</option>
 						<?php } ?>
 					</select>					
+
 					</br>
 					<p class="product_help">* 아파트 단지 선택 중 등록하려는 아파트가 나오지 않는경우 1544-4858 로 문의주시면 즉시 수정 가능합니다.</p>
 				</div>
 			</div>
+
+
 			<div class="form-group">
 				<label class="col-md-2 control-label"><b>상세주소</b>
 					<?php if($config->SHOW_ADDRESS){?>
@@ -154,6 +158,16 @@
 				<div class="col-md-10">
 					<input type="text"  name="apt_dong" class="form-control input-inline input-small" placeholder="동(공개)"  value="<?php if($mode=="edit") echo $query->apt_dong;?>" autocomplete="off"/>
 					<input type="text" name="apt_ho" class="form-control input-inline input-small" placeholder="호수(비공개)"  value="<?php if($mode=="edit") echo $query->apt_ho;?>" autocomplete="off">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-2 control-label"><b>면적/평수</b><span class="required" aria-required="true"> * </span></label>
+				<div class="col-md-10">
+					<input type="number" id="road_area" name="road_area" class="operation_a form-control input-inline input-small" value="<?php if($mode=="edit") echo $query->road_area;?>">
+					<span class="help-inline">㎡</span>
+					<input type="number" id="road_pyoung" class="operation_p form-control input-inline input-small">
+					<span class="help-inline">평</span>
+					<span class="help-inline" id="road_rate"></span>
 				</div>
 			</div>
 			<div class="form-group">
@@ -272,17 +286,17 @@
 						<?php }?>
 						<?php if($config->INSTALLATION_FLAG!="2"){?>
 							<?php if(lang('sell')!=""){?>
-								<label class="btn btn-default <?php if($mode=="edit" && $query->type=="sell") echo "active";?>">
+								<label class=" btn-default <?php if($mode=="edit" && $query->type=="sell") echo "active";?>">
 									<input type="radio" name="type" value="sell" <?php if($mode=="edit" && $query->type=="sell") echo "checked";?> onclick="div_OnOff('1');"/> <?php echo lang('sell');?>
 								</label> 							
 							<?php }?>
 							<?php if(lang('full_rent')!=""){?>
-								<label class="btn btn-default <?php if($mode=="edit" && $query->type=="full_rent") echo "active";?>">
-									<input type="radio" name="type" value="full_rent" <?php if($mode=="edit" && $query->type=="full_rent") echo "checked";?> /> <?php echo lang('full_rent');?>
+								<label class=" btn-default <?php if($mode=="edit" && $query->type=="full_rent") echo "active";?>">
+									<input type="radio" name="type" value="full_rent" <?php if($mode=="edit" && $query->type=="full_rent") echo "checked";?>  onclick="div_OnOff('4');"/> <?php echo lang('full_rent');?>
 								</label>
 							<?php }?>
 							<?php if(lang('monthly_rent')!=""){?>
-								<label class="btn btn-default <?php if($mode=="edit" && $query->type=="monthly_rent") echo "active";?>">
+								<label class=" btn-default <?php if($mode=="edit" && $query->type=="monthly_rent") echo "active";?>">
 									<input type="radio" name="type" value="monthly_rent" <?php if($mode=="edit" && $query->type=="monthly_rent") echo "checked";?>  onclick="div_OnOff('3');"/> <?php echo lang('monthly_rent');?>
 								</label>
 							<?php }?>
@@ -298,22 +312,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-md-2 control-label"><b>거래 범위</b> <span class="required" aria-required="true"> * </span></label>
-				<div class="col-md-10">
-					<!-- 건물 일부인지 전체인지 여부를 체크한다. -->
-					<span id="type_section">
-						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-default   <?php if($mode=="edit") {if($query->part=="Y") echo "active";} else {?>active<?php }?>">
-								<input type="radio" name="part" value="Y" <?php if($mode=="edit") {if($query->part=="Y") echo "checked";} else {?>checked<?php }?>> <b>일부</b> (건물 일부) 
-							</label> 
-							<!--
-							<label class="btn btn-default    <?php if($mode=="edit") {if($query->part=="N") echo "active";}?>">
-								<input type="radio" name="part" value="N"  <?php if($mode=="edit") {if($query->part=="N") echo "checked";}?>> <b><?php echo lang("site.all");?></b> (건물 전체)
-							</label> 							
-							-->
-						</div>
-					</span>
-				</div>
+				<input type="hidden" id="part" name="part" class="form-control input-inline input-small"  value="<?php if($mode=="edit") echo $query->part;?>" />
 			</div>
 			<div class="form-group">
 				<label class="col-md-2 control-label"><b>가격</b> <span class="required" aria-required="true"> * </span></label>
@@ -321,6 +320,7 @@
 					 <div id="sell_price_area" style="margin-bottom:10px;">
 						<input type="number" id="sell_price" name="sell_price" class="operation_a form-control input-inline input-small help" data-toggle="tooltip" title="<?php echo lang('product.price.sell.sell');?>" placeholder="<?php echo lang('product.price.sell.sell');?>" value="<?php if($mode=="edit") echo $query->sell_price;?>"/>
 						<small><?php echo lang('price_unit.form');?></small>
+
 						<span id="lease_price_section">
 							<input type="number" id="lease_price" name="lease_price" class="form-control input-inline input-small help"  data-toggle="tooltip" title="<?php echo lang('product.price.sell.lease');?>" placeholder="<?php echo lang('product.price.sell.lease');?>" value="<?php if($mode=="edit") echo $query->lease_price;?>"/>
 							<small><?php echo lang('price_unit.form');?></small>
@@ -329,6 +329,11 @@
 					<div id="full_price_area" style="margin-bottom:10px;">
 						<input type="number" id="full_rent_price" name="full_rent_price" class="operation_a form-control input-inline input-small" title="<?php echo lang('product.price.fullrent');?>" placeholder="<?php echo lang('product.price.fullrent');?>" value="<?php if($mode=="edit") echo $query->full_rent_price;?>"/>
 						<small><?php echo lang('price_unit.form');?></small>
+
+
+							<input type="number" id="lease_price" name="lease_price" class="form-control input-inline input-small help"  data-toggle="tooltip" title="<?php echo lang('product.price.sell.lease');?>" placeholder="<?php echo lang('product.price.sell.lease');?>" value="<?php if($mode=="edit") echo $query->lease_price;?>"/>
+							<small><?php echo lang('price_unit.form');?></small>
+
 					</div>
 					<div id="rent_price_area" style="margin-bottom:10px;">
 						<input type="number" id="monthly_rent_deposit" name="monthly_rent_deposit" class="form-control input-inline input-small" title="<?php echo lang('product.price.rent.deposit');?>" placeholder="<?php echo lang('product.price.rent.deposit');?>" value="<?php if($mode=="edit") echo $query->monthly_rent_deposit;?>"/>
@@ -514,19 +519,43 @@
 					<span id="enter_year_text"></span>
 				</div>
 			</div>
-			<!--
-			<div class="form-group" id="enter_year_section">
+			<div class="form-group display-none" id="t_interimpayments">
 				<label class="col-md-2 control-label">납부중도금 채권액</label>
 				<div class="col-md-10">
 										<input type="text" id="t_interimpayments" name="t_interimpayments" class="form-control input-inline input-small" placeholder="예)예: 200만원 " value="<?php if($mode=="edit") echo $query->t_interimpayments;?>" autocomplete="off"  data-toggle="tooltip"/> 만원
 					<span id="enter_year_text"></span>
 				</div>
 			</div>
-			-->
 		</div> <!-- form-body -->
 	</div> <!-- portlet-body -->
 </div>
 <!-- 추가 정보 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- 설명 -->
 <div class="portlet box grey">
@@ -737,24 +766,46 @@ function div_OnOff(selectList){
 	var obj1 = document.getElementById("stype01");
 	var obj2 = document.getElementById("stype02");
 	var obj3 = document.getElementById("stype03");
+	var obj4 = document.getElementById("stype04");
+	var obj5 = document.getElementById("stype05");
 
 
 	if( selectList == "1" ) { // 학생 리스트
 		obj1.style.display = "block"; 
 		obj2.style.display = "none";
 		obj3.style.display = "none";
+		obj4.style.display = "none";
+		obj5.style.display = "none";
 	}else if(selectList == "2" ){
 		obj1.style.display = "none"; 
 		obj2.style.display = "block";
 		obj3.style.display = "none";
+		obj4.style.display = "none";
+		obj5.style.display = "none";
 	}else if(selectList == "3" ){
 		obj1.style.display = "none"; 
 		obj2.style.display = "none";
 		obj3.style.display = "block";
+		obj4.style.display = "none";
+		obj5.style.display = "none";
+	}else if(selectList == "4" ){
+		obj1.style.display = "none"; 
+		obj2.style.display = "none";
+		obj3.style.display = "none";
+		obj4.style.display = "block";
+		obj5.style.display = "none";
+	}else if(selectList == "5" ){
+		obj1.style.display = "none"; 
+		obj2.style.display = "none";
+		obj3.style.display = "none";
+		obj4.style.display = "none";
+		obj5.style.display = "block";
 	} else { //디폴트
 		obj1.style.display = "block"; 
 		obj2.style.display = "none";
 		obj3.style.display = "none";
+		obj4.style.display = "none";
+		obj5.style.display = "none";
 	}
 
 }

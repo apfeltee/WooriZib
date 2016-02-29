@@ -275,6 +275,7 @@ Pre-Footer and pre-footer elements
 }
 .pre-footer address {
   line-height: 1.7;
+  font-size: 11px;
 }
 
 .pre-footer hr {
@@ -2988,11 +2989,11 @@ li [class^="fa-"], li [class^="glyphicon-"], li [class^="icon-"], li [class*=" f
 }
 
 .left-green-title h1 {
-  font-size: 18px; 
+  font-size: 14px; 
   font-weight: bold;
   border-left: 5px solid #6CAB12;
   padding-left: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .theme_search_section {
@@ -3009,6 +3010,14 @@ li [class^="fa-"], li [class^="glyphicon-"], li [class^="icon-"], li [class*=" f
 .service-box ._container {
   width: 100%;
   padding: 0;
+}
+
+.video_for_web {
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .board_temp {
@@ -3059,4 +3068,41 @@ li [class^="fa-"], li [class^="glyphicon-"], li [class^="icon-"], li [class*=" f
 
 .product_help {
   margin-top: 10px;
+}
+
+.YouTubeDialog {
+  border: none !important;
+  background: none !important;
+}
+
+.YouTubeDialog .ui-dialog-titlebar {
+  background: black !important;
+  border: none !important;
+}
+
+.YouTubeDialog .ui-dialog-titlebar-close {
+  background: #000 !important;
+  border: none !important;
+}
+
+.videolink-img {
+  width: 22%;
+  float: left;
+  padding: 0 15px;
+}
+
+.notice-img {
+  width: 39%;
+  float: left;
+  padding: 0 15px;
+}
+
+.news-img {
+  width: 39%;
+  float: left;
+  padding: 0 15px;
+}
+
+.fancyYoutube img:hover {
+  -webkit-filter: brightness(0.5);
 }

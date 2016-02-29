@@ -70,7 +70,8 @@ function go_search(name,value){
       <div class="col-1-2">
          <div class="content">
 			  <a href="/mobile/map/clear" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
-					<div class="btn_map btn-1-2 grid_btn"></div>
+					<!-- <div class="btn_map btn-1-2 grid_btn"></div> -->
+          <img src="/assets/mobile/images/transform/btn_map.jpeg">
 					<!-- <?php echo lang("site.map");?> <?php echo lang("site.search");?> -->
 			  </a>
          </div>
@@ -78,7 +79,8 @@ function go_search(name,value){
       <div class="col-1-2">
          <div class="content">
 			  <a href="/mobile/grid" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
-					<div class="btn_list btn-2-2 grid_btn"></div>
+					<!-- <div class="btn_list btn-2-2 grid_btn"></div> -->
+          <img src="/assets/mobile/images/transform/btn_list.jpg">
 					<!-- <?php echo lang("site.list");?> <?php echo lang("site.search");?> -->
 			  </a>
          </div>
@@ -86,7 +88,8 @@ function go_search(name,value){
       <div class="col-1-2">
          <div class="content">
 			  <a href="/mobile/area" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
-					<div class="btn_location btn-1-2 grid_btn"></div>
+					<!-- <div class="btn_location btn-1-2 grid_btn"></div> -->
+          <img src="/assets/mobile/images/transform/btn_location.jpg">
 					<!-- 지역 <?php echo lang("site.search");?> -->
 			  </a>
          </div>
@@ -95,7 +98,8 @@ function go_search(name,value){
          <div class="content">
 			  <!-- <a href="/mobile/subway" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>> -->
         <a href="/mobile/search" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>>
-          <div class="btn_detail btn-2-2 grid_btn"></div>
+          <!-- <div class="btn_detail btn-2-2 grid_btn"></div> -->
+          <img src="/assets/mobile/images/transform/btn_detail.jpg">
 					<!-- <?php echo lang("site.subway");?> <?php echo lang("site.search");?> -->
 			  </a>
          </div>
@@ -111,11 +115,11 @@ function go_search(name,value){
     <div class="grid grid-pad">
     <input type="hidden" name="category[]" value=""/>
       <?php foreach($category as $val){?>
-      <div class="col-2-4"><div class="content category"><a href="javascript:go_search('category[]',<?php echo $val->id?>)" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>><?php echo $val->name?></a></div></div>
+      <div class="col-1-3"><div class="content category"><a href="javascript:go_search('category[]',<?php echo $val->id?>)" <?php if($config->LIST_ENCLOSED && !$this->session->userdata("id")) echo 'class="leanModal" lean-id="#signup"';?>><?php echo $val->name?></a></div></div>
       <?php } ?>
     </div>
 
-    <?php if($is_theme=="Y"){ ?>
+<!--     <?php if($is_theme=="Y"){ ?>
     <div class="separator-fields" style="margin-top:10px;"></div>
     <h2 class="title-new"><?php echo lang("product.theme")?><?php echo lang("site.search");?></h2>    
 
@@ -138,7 +142,17 @@ function go_search(name,value){
       </div>
       <?php } ?>
     </div>
-    <?php } ?>
+    <?php } ?> -->
+
+    <div class="notice-ready">
+      <div class="separator-fields" style="margin-top:10px;"></div>
+      <h2 class="title-new">공지사항</h2>
+      <div class="grid grid-pad">
+      <a href="">
+        <img src="/uploads/images/notice-img.png">
+      </a>
+      </div>
+    </div>
 
 	<?php if($service_valid=="Y" && count($service)>0){?>
 	<div class="separator-fields"></div>
@@ -146,7 +160,7 @@ function go_search(name,value){
 	<div class="service-box">
 		<div class="grid grid-pad">
 			<?php foreach($service as $key=>$val){?>
-			<div class="col-2-4">
+			<div class="col-1-3">
 				<div class="service-cell">
 					<a href="<?php echo $val->link?>">
 						<h5 class="text-center"><?php echo $val->service_name?></h5>

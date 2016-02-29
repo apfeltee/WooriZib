@@ -1525,7 +1525,7 @@ button.close {
 }
 
 .woorizib_m .body {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .woorizib_m .body .grid {
@@ -1534,8 +1534,29 @@ button.close {
 
 .woorizib_m .body .grid .col-1-2 {
   padding: 0;
+  border: 3px solid #F0F0F0;
 }
 
+.woorizib_m .body .grid .col-1-2:nth-child(3),
+.woorizib_m .body .grid .col-1-2:first-child {
+  border-left: 6px solid #F0F0F0;
+}
+
+.woorizib_m .body .grid .col-1-2:nth-child(2),
+.woorizib_m .body .grid .col-1-2:last-child {
+  border-right: 6px solid #F0F0F0;
+}
+
+.woorizib_m .body .grid .col-1-2:nth-child(2),
+.woorizib_m .body .grid .col-1-2:first-child {
+  border-top: 6px solid #F0F0F0;
+}
+
+.woorizib_m .body .grid .col-1-2:nth-child(3),
+.woorizib_m .body .grid .col-1-2:last-child {
+  border-bottom: 6px solid #F0F0F0;
+}
+/*
 .woorizib_m .body .grid .grid_btn {
   background-size: contain;
   background-position: center center;
@@ -1559,4 +1580,4 @@ button.close {
 
 .woorizib_m .body .grid .btn_detail {
   background-image: url(/assets/mobile/images/transform/btn_detail.jpg);
-}
+}*/

@@ -74,3 +74,57 @@ ls
 quit
 #1456187742
 exit
+#1456446852
+mysqldump -uwoorizib -p woorizib > wrzdb1602260934.sql
+#1456447776
+grep . /etc/*-release
+#1456447856
+git status
+#1456447862
+ls
+#1456447867
+cd ..
+#1456447867
+ls
+#1456447869
+git status
+#1456447876
+.git
+#1456447877
+git
+#1456447886
+cd ..
+#1456447886
+ls
+#1456447888
+git
+#1456447891
+git status
+#1456447892
+ls
+#1456447906
+cd home/
+#1456447906
+ls
+#1456447908
+cd tago
+#1456447908
+ls
+#1456447921
+git --version
+#1456450234
+ls
+#1456450241
+git remote add
+#1456450264
+git remote add origin git@github.com:hihihoo/woorizib.git
+#1456450274
+ls
+#1456450284
+cd ..
+#1456450285
+ls
+#1456450286
+cd tago
+#1456450286
+ls

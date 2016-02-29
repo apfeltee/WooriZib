@@ -2,7 +2,7 @@
 <html>
 <head>
 <!-- <title><?php echo $config->site_name;?> <?php echo (isset($page_title)) ? "-".$page_title : ""?></title> -->
-<title>아파트,빌라, 방 구할땐 우리집</title>
+<title>아파트,빌라 구할땐 우리집</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,6 +80,26 @@
 <script src="/assets/plugin/jquery-leanmodal/jquery.leanModal.min.js"></script>
 <script language="javascript">
 $(document).ready(function() {
+
+	$(".fancyYoutube").click(function() {
+		$.fancybox({
+			'padding'		: 0,
+			'autoScale'		: false,
+			'transitionIn'	: 'none',
+			'transitionOut'	: 'none',
+			'title'			: this.title,
+			'width'			: 640,
+			'height'		: 385,
+			'href'			: this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+			'type'			: 'swf',
+			'swf'			: {
+			'wmode'				: 'transparent',
+			'allowfullscreen'	: 'true'
+			}
+		});
+
+		return false;
+	});
 
 	$.support.cors = true; /* ie9 등에서 한글도메인일 경우에 넣어줘야만 ajaxform이 동작한다. */
 
