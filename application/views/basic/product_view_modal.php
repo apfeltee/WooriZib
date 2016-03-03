@@ -61,7 +61,7 @@ $code = Array(
 						<!-- 갤러리 종료 -->
 					  </div>
 					  <?php } ?>
-
+					<!--상세정보-->
 					<?php echo $product_view;?>
 
 					<?php if($this->config->item('view_map_position')=='bottom'){?>
@@ -277,7 +277,7 @@ $code = Array(
 							<tr>
 								<td><?php echo $val->bank_name;?></td>
 								<td><?php echo $val->rate_min;?>~<?php echo $val->rate_max;?>%</td>
-								<td><?php echo number_format($val->loan_limit);?>만원</td>
+								<td><b><?php echo number_format($val->loan_limit);?></b>만원</td>
 							</tr>
 							<?php }?>
 						</table>
@@ -302,7 +302,7 @@ $code = Array(
 									<tr>
 										<td><?php echo $val->bank_name;?></td>
 										<td><?php echo $val->rate_min;?>~<?php echo $val->rate_max;?>%</td>
-										<td><?php echo number_format($val->loan_limit);?>만원</td>
+										<td><b><?php echo number_format($val->loan_limit);?></b>만원</td>
 										<td><?php echo$val->etc;?></td>
 									</tr>
 									<?php }?>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <!-- <title><?php echo $config->site_name;?> <?php echo (isset($page_title)) ? "-".$page_title : ""?></title> -->
-<title>아파트,빌라 구할땐 우리집</title>
+<title>아파트,빌라 구할땐 우리집앱</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">

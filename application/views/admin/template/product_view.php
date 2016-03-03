@@ -11,6 +11,33 @@
 
 	<table class="border-table">
 		<tr>
+			<th width="20%">단지명</th>
+			<td width="30%">
+				<?php echo $query->danzi_id;?>
+			</td>
+			<th width="20%">면적</th>
+			<td width="30%">
+				<strong><?php echo $query->road_area;?>㎡</strong>
+			</td>		
+		</tr>
+		<tr>
+			<th width="20%" rowspan="2"><?php echo lang("site.price");?></th>
+			<td width="30%" rowspan="2">
+				<?php echo price($query,$config,true);?>
+				<?php if($query->monthly_rent_deposit_min!=false) {echo "(".lang('product.price.monthly_rent_deposit_min').": ".number_format($query->monthly_rent_deposit_min)." 만원)";}?>
+				<?php if(price_description($query)!=""){?><span style='color:#454545;'>(<?php echo price_description($query);?>)</span><?php }?>
+				<?php echo ($query->price_adjustment) ? "(가격조정가능)":"";?>
+			</td>
+			<th width="20%" >융자</th>
+			<td width="30%">
+				<strong><?php echo $query->lease_price;?>만원</strong>
+			</td>		
+		</tr>
+		<tr>
+		  <th >세입자유무</th>
+	      <td width="30%"><?php if($query->t_tenants=="1"){?>유<?php }else{?>무<?php }?></td>
+	  </tr>
+		<tr>
 			<th width="20%"><?php echo lang("product.category");?></th>
 			<td width="30%">
 				<?php echo $category_one->name;?>
@@ -22,15 +49,25 @@
 			</td>		
 		</tr>
 		<tr>
-			<th width="20%"><?php echo lang("site.price");?></th>
-			<td width="80%" colspan="3" class="price_detail_wrapper" id="pulsate-once-target">
-				<?php echo price($query,$config,true);?>
-				<?php if($query->monthly_rent_deposit_min!=false) {echo "(".lang('product.price.monthly_rent_deposit_min').": ".number_format($query->monthly_rent_deposit_min)." 만원)";}?>
-				<?php if(price_description($query)!=""){?><span style='color:#454545;'>(<?php echo price_description($query);?>)</span><?php }?>
-				<?php echo ($query->price_adjustment) ? "(가격조정가능)":"";?>
+			<th width="20%">층수</th>
+			<td width="30%">
+						<?php echo $query->address_unit;?>
 			</td>
+			<th width="20%" >기보증금/월세</th>
+			<td width="30%">
+				<strong><?php echo $query->t_leasingstatus;?></strong>
+			</td>		
 		</tr>
-
+		<tr>
+			<th width="20%">방개수</th>
+			<td width="30%">
+						<?php echo $query->bedcnt;?>
+			</td>
+			<th width="20%" >방향/욕실수</th>
+			<td width="30%">
+				<strong><?php echo $query->t_direction;?> / <?php echo $query->bathcnt;?></strong>
+			</td>		
+		</tr>
 		<?php if($form->mgr_price && $query->mgr_price!="") {?>
 		<tr>
 			<th width="20%"><?php echo lang("product.mgr_price");?></th>
@@ -97,12 +134,18 @@
 			</td>
 		<?php } ?>
 		</tr>
+		<tr>			
+			<th width="20%">입주가능일</th>
+			<td width="80%" colspan="3"><?php echo $query->enter_year;?></td>
+		</tr>
+		<!--
 		<?php if($query->apt_dong){?>
 		<tr>			
 			<th width="20%">동/호수</th>
 			<td width="80%" colspan="3"><?php echo $query->apt_dong;if($this->session->userdata("admin_id")!="") echo " ".$query->apt_ho;?></td>
 		</tr>
 		<?php }?>
+		-->
 		<tr <?php if($config->SUBWAY=="0") echo "style='display:none;'";?>>
 			<th width="20%"><?php echo lang("site.subway");?></th>
 			<td width="80%" colspan="3">
@@ -474,6 +517,7 @@
 		<tr>
 			<th width="20%">규모</th>
 			<td width="30%">
+
 				<?php if($building->underground_floors) echo "지하 : ".$building->underground_floors.lang("product.f")."<br/>";?>
 				<?php if($building->ground_floors) echo "지상 : ".$building->ground_floors.lang("product.f");?>
 			</td>

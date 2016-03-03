@@ -333,7 +333,7 @@ $(document).ready(function(){
 							<tr>
 								<td><?php echo $val->bank_name;?></td>
 								<td><?php echo $val->rate_min;?>~<?php echo $val->rate_max;?>%</td>
-								<td><?php echo number_format($val->loan_limit);?>만원</td>
+								<td><b><?php echo number_format($val->loan_limit);?></b>만원</td>
 							</tr>
 							<?php }?>
 						</table>
@@ -358,7 +358,7 @@ $(document).ready(function(){
 									<tr>
 										<td><?php echo $val->bank_name;?></td>
 										<td><?php echo $val->rate_min;?>~<?php echo $val->rate_max;?>%</td>
-										<td><?php echo number_format($val->loan_limit);?>만원</td>
+										<td><b><?php echo number_format($val->loan_limit);?></b>만원</td>
 										<td><?php echo$val->etc;?></td>
 									</tr>
 									<?php }?>

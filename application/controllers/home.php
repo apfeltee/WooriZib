@@ -47,11 +47,11 @@ class Home extends CI_Controller {
 		
 		$this->load->library("Components");
 		$data["home_layout"] = $this->components->get($this->Mlayout->get_list());
-
+		//var_dump(THEME);
 		//관리자의 색상 스킨 사용여부
 		if($skin_page && $this->session->userdata("admin_id")) $this->session->set_userdata("skin_control",true);
 		else $this->session->set_userdata("skin_control",false);
-
+		
 		$this->layout->view(THEME.'/home_index',$data);			
 
 		$this->load->helper("check");

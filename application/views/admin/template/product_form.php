@@ -79,10 +79,10 @@
 						<span class="input-group-addon "><label style="margin:0px;"><?php echo lang("site.recommand");?> <input type="checkbox" id="recommand" name="recommand" <?php if($mode=="edit"){ if($query->recommand=="1") echo "checked='checked'";}?>></label></span>
 						<span class="input-group-addon"><label>급매 <input type="checkbox" id="is_speed" name="is_speed" <?php if($mode=="edit"){ if($query->is_speed=="1") echo "checked='checked'";}?>></label></span>
 						<span class="input-group-addon"><label>보류 <input type="checkbox" id="is_defer" name="is_defer" <?php if($mode=="edit"){ if($query->is_defer=="1") echo "checked='checked'";}?>></label></span>
-						<input type="text" name="title" class="form-control" placeholder="제목이며 앞에서 부터 중요한 단어를 작성해 주시면 더 좋습니다." value="<?php if($mode=="edit") echo $query->title;?>"/>
+						<input type="text" name="title" class="form-control" placeholder="아파트명을 먼저 쓰는게 좋습니다. (예 : 해운대 두산위브더제니스 오션뷰가 끝내주는 초고층 최고급아파트)" value="<?php if($mode=="edit") echo $query->title;?>"/>
 					</div>
 					<?php } else {?>
-						<input type="text" name="title" class="form-control" placeholder="제목이며 앞에서 부터 중요한 단어를 작성해 주시면 더 좋습니다." value="<?php if($mode=="edit") echo $query->title;?>"/>
+						<input type="text" name="title" class="form-control" placeholder="아파트명을 먼저 쓰는게 좋습니다. (예 : 해운대 두산위브더제니스 오션뷰가 끝내주는 초고층 최고급아파트)" value="<?php if($mode=="edit") echo $query->title;?>"/>
 					<?php }?>
 				</div>
 			</div>
@@ -388,6 +388,8 @@
 				</div>
 			</div>
 </div>
+
+
 <div id="stype03" style="display:none">
 			<div id="roon_cnt " class="form-group">
 				<label class="col-md-2 control-label">보증금조절여부</label>
@@ -396,15 +398,14 @@
 <label>불가능 <input type="radio" id="t_deposit" name="t_deposit" value="2" <?php if($mode=="edit"){ if($query->t_deposit=="2") echo "checked='checked'";}?>></label>
 				</div>
 			</div>
+
 </div>
-<!--
-			<div id="roon_cnt " class="form-group">
+			<div id="t_premium" class="form-group display-none">
 				<label class="col-md-2 control-label">프리미엄</label>
 				<div class="col-md-10">
 					<input type="text" id="t_premium" name="t_premium" class="form-control input-inline input-small" placeholder="예)200만원" value="<?php if($mode=="edit") echo $query->t_premium;?>" autocomplete="off"/>만원
 				</div>
 			</div>
--->
 			<div id="roon_cnt" class="form-group">
 				<label class="col-md-2 control-label">방개수</label>
 				<div class="col-md-10">
@@ -465,7 +466,31 @@
 	</div>
 	<div class="portlet-body form">
 		<div class="form-body">
-
+			<div class="form-group">
+				<label class="col-md-2 control-label"><?php echo lang("product.theme");?></label>
+				<div class="col-md-10">
+					<div class="btn-group" data-toggle="buttons">
+					<?php 
+					if($mode!="edit"){
+						foreach($theme as $val){?>
+							<label class="btn btn-default ">
+								<input type="checkbox" name="theme[]" value="<?php echo $val->id;?>"> <?php echo $val->theme_name;?>
+							</label> 							
+						<?php 
+						}
+					} else {
+						$theme_vals = explode(",",$query->theme);	/** theme값들을 array로 추출 **/
+						foreach($theme as $val){?>
+							<label class="btn btn-default  <?php if (in_array($val->id, $theme_vals)) {echo "active";}?>">
+								<input type="checkbox" name="theme[]" value="<?php echo $val->id;?>" <?php if (in_array($val->id, $theme_vals)) {echo "checked";}?>> <?php echo $val->theme_name;?>
+							</label> 	
+					<?php 
+						}
+					}
+					?>
+					</div>
+				</div>
+			</div>
 			<div class="form-group" id="enter_year_section">
 				<label class="col-md-2 control-label">총세대수</label>
 				<div class="col-md-10">

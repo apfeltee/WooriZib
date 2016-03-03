@@ -410,7 +410,7 @@ function sms_confirm_check(obj,phone,form){
 						</div>
 					</div>
 					<div class="text-right">
-					  <button type="submit" class="btn btn-primary btn-lg btn-block"><?php echo lang("menu.signup");?></button>
+					  <button type="submit" class="btn btn-primary btn-lg btn-block btn-join"><?php echo lang("menu.signup");?></button>
 					</div>
 					<?php echo form_close();?>	
 					</div>
@@ -514,7 +514,7 @@ function sms_confirm_check(obj,phone,form){
 							</div>
 						</div>
 						<div class="text-right" style="margin-bottom:30px;">
-						  <button type="submit" class="btn btn-primary btn-lg btn-block">
+						  <button type="submit" class="btn btn-primary btn-lg btn-block btn-join">
 						  <?php echo lang("menu.signup");?></button>
 						</div>
 					  <?php echo form_close();?>	

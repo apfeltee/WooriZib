@@ -79,7 +79,6 @@
 <script src="/assets/plugin/jquery-leanmodal/jquery.leanModal.min.js"></script>
 <script language="javascript">
 $(document).ready(function() {
-
 	$.support.cors = true; /* ie9 등에서 한글도메인일 경우에 넣어줘야만 ajaxform이 동작한다. */
 
 	$("#modal_login_form").validate({

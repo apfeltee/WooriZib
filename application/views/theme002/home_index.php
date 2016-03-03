@@ -15,7 +15,7 @@ var marker;
 var daum_infowindow;
 
 $(document).ready(function(){
-
+    
 	$('.color-mode >ul > li.color').click(function(){
 		loadCSS($(this).attr('data-style'),'');
 	});

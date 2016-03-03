@@ -95,8 +95,8 @@ $(document).ready(function() {
 
 				<div class="separator-button-input"></div>
 				<div class="separator-button-input"></div>
-				<a class="btn btn-info btn-lg btn-block" href="/mobile/signup"><strong>회 원 가 입</strong></a>
-				<button class="btn btn-primary btn-lg btn-block" type="submit"><strong>로 그 인</strong></button>
+				<a class="btn btn-info btn-lg btn-block btn-join" href="/mobile/signup"><strong>회 원 가 입</strong></a>
+				<button class="btn btn-primary btn-lg btn-block btn-login" type="submit"><strong>로 그 인</strong></button>
 				<div class="separator-button"></div>
 				<?php echo form_close();?>
           </div>

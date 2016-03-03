@@ -21,7 +21,7 @@ class Product extends CI_Controller {
 			$this->load->model("Mloan");
 			$data['loan'] = $this->Mloan->get_list();
 			foreach($data['loan'] as $val){
-				$val->loan_limit = $data['query']->sell_price * $val->rate_loan;
+				$val->loan_limit = $data['query']->sell_price * $val->rate_loan/100;
 			}
 		}		
 
@@ -71,7 +71,7 @@ class Product extends CI_Controller {
 			$this->load->model("Mloan");
 			$data['loan'] = $this->Mloan->get_list();
 			foreach($data['loan'] as $val){
-				$val->loan_limit = $data['query']->sell_price * $val->rate_loan;
+				$val->loan_limit = $data['query']->sell_price * $val->rate_loan/100;
 			}
 		}
 

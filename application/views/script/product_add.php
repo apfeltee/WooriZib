@@ -513,6 +513,14 @@ function get_option(){
 				if(key=="danzi"){
 					display_form("danzi_name", val);
 					display_form("danzi_id", val);
+					if(val=="2"){
+					}else{
+						display_form("t_interimpayments", val);
+						display_form("t_premium", val);
+
+						/* alert("'"+val+"'");*/
+					}
+
 				}
 				if(key=="dongho") 			display_form("dongho", val);
 				if(key=="lease_price") 			display_form("lease_price_section", val);

@@ -394,7 +394,7 @@ function sms_confirm_check(obj,phone,form){
 						<div class="form-group">
 						  <label for="email" class="col-lg-3 control-label"><?php echo lang("site.email");?> <span class="require">*</span></label>
 						  <div class="col-lg-9">
-							<input type="text" class="form-control input-lg" name="suEmail" autocomplete="off" placeholder="이메일">
+							<input type="text" class="form-control input-lg" name="suEmail" autocomplete="off" placeholder="이메일 (아이디로 사용됩니다)">
 						  </div>
 						</div>
 						<div class="form-group">
@@ -455,7 +455,7 @@ function sms_confirm_check(obj,phone,form){
 						<div class="form-group">
 						  <label for="suEmail" class="col-lg-3 control-label"><?php echo lang("site.email");?> <span class="require">*</span></label>
 						  <div class="col-lg-9">
-							<input type="text" class="form-control input-lg" name="suEmail" autocomplete="off" placeholder="이메일">
+							<input type="text" class="form-control input-lg" name="suEmail" autocomplete="off" placeholder="이메일 (아이디로 사용됩니다)">
 						  </div>
 						</div>
 						<div class="form-group">
@@ -517,14 +517,14 @@ function sms_confirm_check(obj,phone,form){
 							<span class="require">*</span>
 						  </label>
 						  <div class="col-lg-9">
-							<input type="text" class="form-control input-lg" name="biz_name" autocomplete="off" placeholder="사업자명">
+							<input type="text" class="form-control input-lg" name="biz_name" autocomplete="off" placeholder="관할기관에 등록된 사무소 이름을 입력하세요 ex)우리집공인중개사">
 							<div class="help-block">* 중개업자일 경우에는 개설등록증에 기재된 명칭.</div>
 						  </div>
 						</div>
 						<div class="form-group">
 						  <label class="col-lg-3 control-label"><?php echo lang("site.ceo");?> <span class="require">*</span></label>
 							<div class="col-lg-9">
-								<input type="text" name="biz_ceo" class="form-control input-lg" placeholder="<?php echo lang("site.ceo");?>"/>
+								<input type="text" name="biz_ceo" class="form-control input-lg" placeholder="관할기관에 등록된 대표자 이름을 실명으로 입력하세요"/>
 							</div>
 						</div>							
 						<div class="form-group">
